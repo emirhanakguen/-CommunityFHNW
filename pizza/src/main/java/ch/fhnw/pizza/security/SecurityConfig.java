@@ -1,4 +1,4 @@
-package ch.fhnw.pizza.security;
+package services.src.main.java.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,41 +26,30 @@ public class SecurityConfig {
 
         return new InMemoryUserDetailsManager(
             User.withUsername("myuser")
-                //.password("{noop}password") //create user with an encrypted password instead of the plain text password
-                .password("{bcrypt}$2a$10$9fxQtdWuRaYn5UchAm5iAexbPi7tmRadnDogJwXPR9fVDJyt9g/su")
+                .password("{noop}password")
                 .authorities("READ","ROLE_USER")
                 .build(), 
             User.withUsername("myadmin")
-                //.password("{noop}password") //create user with an encrypted password instead of the plain text password
-                .password("{bcrypt}$2a$10$9fxQtdWuRaYn5UchAm5iAexbPi7tmRadnDogJwXPR9fVDJyt9g/su")
+                .password("{noop}password")
                 .authorities("READ","ROLE_ADMIN")
+                .build());
+            User.withUsername("mysuperadmin")
+                .password("{noop}password")
+                .authorities("READ","ROLE_SUPERADMIN")
                 .build());
 
     }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests( auth -> auth
-                        .requestMatchers("/menu").hasRole("USER") //note that the role need not be prefixed with "ROLE_"
-                        .requestMatchers("/menu/pizzas/**").hasRole("ADMIN") //note that the role need not be prefixed with "ROLE_"
-                        .requestMatchers("/menu/**",
-                                                    "/**", //allow access to the home page
-                                                    "/swagger-ui.html", //allow access to the swagger UI
-                                                    "/v3/api-docs/**",  //allow access to the swagger API documentation
-                                                    "/swagger-ui/**",   //allow access to the swagger UI
-                                                    "/h2-console/**")   //allow access to the h2-console
-                                                    .permitAll() 
-                        .anyRequest().hasAuthority("SCOPE_READ")           
-                )       
-                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable())) //needed to allow access to the h2-console
-                .formLogin(withDefaults()) //need to include a static import for withDefaults, see the imports at the top of the file
-                .httpBasic(withDefaults())
-                .build(); 
+    return http
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests( auth -> auth
+                    .requestMatchers("/securitytest/admin").hasRole("ADMIN") //note that the role need not be prefixed with "ROLE_"
+                    .requestMatchers("/securitytest/superadmin").hasRole("SUPERADMIN") //note that the role need not be prefixed with "ROLE_"
+                    .requestMatchers("/securitytest/user").hasRole("USER") //note that the role need not be prefixed with "ROLE_"
+                    .requestMatchers("/securitytest/**").permitAll()            
+            )       
+            .formLogin(withDefaults()) //need to include a static import for withDefaults, see the imports at the top of the file
+            .httpBasic(withDefaults())
+            .build(); 
     } 
-
-
-
-        
-}
