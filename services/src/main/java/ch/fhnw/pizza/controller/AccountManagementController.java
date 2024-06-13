@@ -1,6 +1,7 @@
 package services.src.main.java.ch.fhnw.pizza.controller;
 
 import services.src.main.java.business.CollaborationsList;
+import services.src.main.java.ch.fhnw.pizza.business.service.CollaborationsList;
 import services.src.main.java.data.domain.AccountManagement;
 
 import org.springframework.beans.factory.annotation.Autowired;

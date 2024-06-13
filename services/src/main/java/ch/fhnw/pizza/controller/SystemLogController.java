@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/systemlog")
-public class JobAdvertisementController {
+public class SystemLogController {
 
     @GetMapping(path = "/api/admin/logs",produces = "application/json")
     public ResponseEntity<List<SystemLog>> getAllSystemLogs() {

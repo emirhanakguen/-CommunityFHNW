@@ -1,4 +1,4 @@
-package services.src.main.java.controller;
+package services.src.main.java.ch.fhnw.pizza.controller;
 
 import services.src.main.java.business.CollaborationsList;
 import services.src.main.java.data.domain.BuddySystem;
