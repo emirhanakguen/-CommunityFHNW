@@ -1,4 +1,4 @@
-package services.src.main.java;
+package services.src.main.java.ch.fhnw.pizza;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
