@@ -46,7 +46,7 @@ public class CollaborationApplication {
 
 		AdminActions aa = new AdminActions();
 		aa.setActionType(ActionType.DELETE);
-		aa.setTimeStamp(2024-11-09-14.32);
+		aa.setTimeStamp(2024-11-07-14.32);
 		collaborationsList.updateAdminAction(aa);
 
 		BuddySystem bs = new BuddySystem();
@@ -69,7 +69,7 @@ public class CollaborationApplication {
 		ip.setProjectName("Assignment 1 for Programming 1");
 		ip.setDescription("Peter Kranz from the class BITPT1b needs a partner. The project focuses on the simple application of GUI objects.");
 		ip.setReccuring(true);
-		ip.setStartTime(2022-09-20-08.15);
+		ip.setStartTime(2022-01-20-08.15);
 		ip.setEndTime(2022-12-05-12.00);
 		collaborationsList.createIndependentProject(ip);
 
@@ -83,7 +83,7 @@ public class CollaborationApplication {
 		MentoringForProjects mfp = new MentoringForProjects();
 		mfp.setSubject("Corporate Finance and Controlling");
 		mfp.setDescription("Explanation of basic concepts/theory and calculations.");
-		mfp.setReccuring(false));
+		mfp.setReccuring(false);
 		mfp.setProjectName("Additional support for basic lectures");
 		mfp.setStartTime(2019-05-20-21.00);
 		mfp.setEndTime(2019-02-20-17.15);
@@ -118,7 +118,5 @@ public class CollaborationApplication {
 		u.setEmail("emirhan.akguen@students.fhnw.ch");
 		u.setPhoneNumber("061 231 79 64");
 		collaborationsList.createUser(u);
-		
 	}
-
 }

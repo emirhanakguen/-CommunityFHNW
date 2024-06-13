@@ -1,4 +1,4 @@
-package services.src.main.java.ch.fhnw.collaboration.business.service.CollaborationsList;
+package ch.fhnw.pizza.business.service;
 
 import java.util.List;
 
