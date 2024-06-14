@@ -23,10 +23,10 @@ public class ForumResponse{
     private String Content;
 
     @Column(name = "ResponseTime")
-    private Timestamp ResponseTime;
+    private String ResponseTime;
 
 public ForumResponse(int ResponseID,String Content,
-    Timestamp ResponseTime){
+    String ResponseTime){
     this.ResponseID = ResponseID;
     this.Content = Content;
     this.ResponseTime = ResponseTime;
@@ -43,11 +43,11 @@ public String getContent(){
 public void setContent(String Content){
     this.Content = Content;
 }
-public Timestamp getResponseTime(){
+public String getResponseTime(){
     return ResponseTime;
 }
-public void setResponseTime(Timestamp ResponseTime){
-    this.ResponseTime = ResponseTime;
+public void setResponseTime(String d){
+    this.ResponseTime = d;
     }
 public void setPostId(Long postId) {
     // TODO Auto-generated method stub

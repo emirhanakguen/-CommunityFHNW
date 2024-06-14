@@ -1,7 +1,5 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.security.Timestamp;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,13 +27,13 @@ public class IndependentProject{
     private Boolean Recurring;
 
     @Column(name = "StartTime")
-    private Timestamp StartTime;
+    private String StartTime;
 
     @Column(name = "EndTime")
-    private Timestamp EndTime;
+    private String EndTime;
 
 public IndependentProject(int ProjectID,String ProjectName,
-    String Description,Boolean Recurring,Timestamp StartTime,Timestamp EndTime){
+    String Description,Boolean Recurring,String StartTime,String EndTime){
     this.ProjectID = ProjectID;
     this.ProjectName = ProjectName;
     this.Description = Description;
@@ -67,16 +65,16 @@ public Boolean getReccuring(){
 public void setReccuring(Boolean Reccuring){
     this.Recurring = Reccuring;
 }
-public Timestamp getStartTime(){
+public String getStartTime(){
     return StartTime;
 }
-public void setStartTime(Timestamp StartTime){
-    this.StartTime = StartTime;
+public void setStartTime(String d){
+    this.StartTime = d;
 }
-public Timestamp getEndTime(){
+public String getEndTime(){
     return EndTime;
 }
-public void setEndTime(Timestamp EndTime){
-    this.EndTime = EndTime;
+public void setEndTime(String d){
+    this.EndTime = d;
     }
 }

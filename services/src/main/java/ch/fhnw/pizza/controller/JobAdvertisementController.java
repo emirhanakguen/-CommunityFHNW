@@ -2,6 +2,7 @@ package ch.fhnw.pizza.controller;
 
 import ch.fhnw.pizza.business.service.CollaborationsList;
 import ch.fhnw.pizza.data.domain.JobAdvertisement;
+import jakarta.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

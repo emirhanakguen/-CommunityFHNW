@@ -1,7 +1,5 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.security.Timestamp;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,12 +18,12 @@ public class SystemLog{
     private int LogID;
 
     @Column(name = "TimeStamp")
-    private Timestamp TimeStamp;
+    private String TimeStamp;
 
     @Column(name = "Description")
     private String Description;
 
-public SystemLog(int LogID,Timestamp TimeStamp,String Description){
+public SystemLog(int LogID,String TimeStamp,String Description){
     this.LogID = LogID;
     this.TimeStamp = TimeStamp;
     this.Description = Description;
@@ -36,11 +34,11 @@ public int getLogID(){
 public void setLogID(int LogID){
     this.LogID = LogID;
 }
-public Timestamp getTimeStamp(){
+public String getTimeStamp(){
     return TimeStamp;
 }
-public void setTimeStamp(Timestamp TimeStamp){
-    this.TimeStamp = TimeStamp;
+public void setTimeStamp(String d){
+    this.TimeStamp = d;
 }
 public String getDescription(){
     return Description;

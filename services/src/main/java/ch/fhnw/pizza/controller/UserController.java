@@ -34,20 +34,18 @@ public class UserController {
     public ResponseEntity<?> updateUser(@RequestBody User updatedUser) {
     try {
         User existingUser = userRepository.findById(updatedUser.getUserID())
-        .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + updatedUser.getId()));
+        .orElseThrow(() -> new Exception("User not found with ID: " + updatedUser.getUserID()));
         existingUser.setSomeProperty(updatedUser.getSomeProperty());
         userRepository.save(existingUser);
         return ResponseEntity.ok("User updated successfully.");
-    } catch (Exception e) {
-        return ResponseEntity.notFound().build();
     } catch (Exception e) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
 }
     @DeleteMapping(path = "/api/admin/users/manage")
-    public ResponseEntity<?> deleteUser(@RequestBody int userID) {
+    public ResponseEntity<?> deleteUser(@RequestBody long userID) {
     try {
-        Optional<User> optionalUser = userRepository.findById(userID);
+        User optionalUser = userRepository.findById(userID).get();
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             userRepository.delete(user);

@@ -4,7 +4,20 @@
     // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "type": "java",
+            "name": "CollaborationApplication",
+            "request": "launch",
+            "mainClass": "ch.fhnw.pizza.CollaborationApplication",
+            "projectName": "pizza"
+        },
+        {
+            "type": "java",
+            "name": "CollaborationApplication",
+            "request": "launch",
+            "mainClass": "services.src.main.java.ch.fhnw.pizza.CollaborationApplication",
+            "projectName": ""
+        },
         {
             "type": "java",
             "name": "Current File",

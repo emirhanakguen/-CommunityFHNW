@@ -1,7 +1,5 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.security.Timestamp;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,13 +24,13 @@ public class JobAdvertisement {
     private String Description;
 
     @Column(name = "ApplicationDeadline")
-    private Timestamp ApplicationDeadline;
+    private String ApplicationDeadline;
 
     @Column(name = "ContactInfo")
     private String ContactInfo;
 
 public JobAdvertisement(int JobAdID,String Title,
-    String Description,Timestamp ApplicationDeadline,String ContactInfo){
+    String Description,String ApplicationDeadline,String ContactInfo){
     this.JobAdID = JobAdID;
     this.Title = Title;
     this.Description = Description;
@@ -57,11 +55,11 @@ public String getDescription(){
 public void setDescripton(String Description){
     this.Description = Description;
 }
-public Timestamp getApplicationDeadline(){
+public String getApplicationDeadline(){
     return ApplicationDeadline;
 }
-public void setApplicationDeadline(Timestamp ApplicationDeadline){
-    this.ApplicationDeadline = ApplicationDeadline;
+public void setApplicationDeadline(String d){
+    this.ApplicationDeadline = d;
 }
 public String getContactInfo(){
     return ContactInfo;

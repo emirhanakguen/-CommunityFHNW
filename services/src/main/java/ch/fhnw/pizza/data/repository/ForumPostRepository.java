@@ -11,5 +11,5 @@ public interface ForumPostRepository extends JpaRepository<ForumPost, Long> {
     Object findByTopic(String topic);
     // You can add custom query methods here if needed
 
-    void deleteByPostId(int postID);
+    void deleteByPostId(long postID);
 }

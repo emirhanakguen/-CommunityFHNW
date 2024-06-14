@@ -1,14 +1,11 @@
 package ch.fhnw.pizza.controller;
 
-import ch.fhnw.pizza.business.service.CollaborationsList;
 import ch.fhnw.pizza.data.domain.SystemLog;
 import ch.fhnw.pizza.data.repository.SystemLogRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 

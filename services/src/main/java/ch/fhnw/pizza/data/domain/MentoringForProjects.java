@@ -1,7 +1,5 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.security.Timestamp;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,14 +30,14 @@ public class MentoringForProjects{
     private String ProjectName;
 
     @Column(name = "StartTime")
-    private Timestamp StartTime;
+    private String StartTime;
 
     @Column(name = "EndTime")
-    private Timestamp EndTime;
+    private String EndTime;
 
 public MentoringForProjects(int ProjectID,String Subject,
     String Description,Boolean Recurring,String ProjectName,
-    Timestamp StartTime,Timestamp EndTime){
+    String StartTime,String EndTime){
     this.ProjectID = ProjectID;
     this.Subject = Subject;
     this.Description = Description;
@@ -78,16 +76,16 @@ public String getProjectName(){
 public void setProjectName(String ProjectName){
     this.ProjectName = ProjectName;
 }
-public Timestamp getStartTime(){
+public String getStartTime(){
     return StartTime;
 }
-public void setStartTime(Timestamp StartTime){
-    this.StartTime = StartTime;
+public void setStartTime(String d){
+    this.StartTime = d;
 }
-public Timestamp getEndTime(){
+public String getEndTime(){
     return EndTime;
 }
-public void setEndTime(Timestamp EndTime){
-    this.EndTime = EndTime;
+public void setEndTime(String d){
+    this.EndTime = d;
     }
 }
