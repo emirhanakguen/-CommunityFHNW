@@ -1,4 +1,6 @@
-package services.src.main.java.ch.fhnw.pizza.data.domain;
+package ch.fhnw.pizza.data.domain;
+
+import java.security.Timestamp;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
@@ -15,7 +17,7 @@ public class JobAdvertisement {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "JobAdID")
-    private Int JobAdID;
+    private int JobAdID;
 
     @Column(name = "Title")
     private String Title;
@@ -29,7 +31,7 @@ public class JobAdvertisement {
     @Column(name = "ContactInfo")
     private String ContactInfo;
 
-public JobAdvertisement(Int JobAdID,String Title,
+public JobAdvertisement(int JobAdID,String Title,
     String Description,Timestamp ApplicationDeadline,String ContactInfo){
     this.JobAdID = JobAdID;
     this.Title = Title;
@@ -37,10 +39,10 @@ public JobAdvertisement(Int JobAdID,String Title,
     this.ApplicationDeadline = ApplicationDeadline;
     this.ContactInfo = ContactInfo;
 }
-public Int getJobAdID(){
+public int getJobAdID(){
     return JobAdID;
 }
-public void setJobAdID(Int JobAdID){
+public void setJobAdID(int JobAdID){
     this.JobAdID = JobAdID;
 }
 public String getTitle(){
@@ -50,7 +52,7 @@ public void setTitle(String Title){
     this.Title = Title;
 }
 public String getDescription(){
-    return Descripton;
+    return Description;
 }
 public void setDescripton(String Description){
     this.Description = Description;

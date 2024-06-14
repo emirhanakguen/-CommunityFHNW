@@ -1,4 +1,4 @@
-package services.src.main.java.ch.fhnw.pizza.controller;
+package ch.fhnw.pizza.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;

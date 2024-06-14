@@ -1,7 +1,7 @@
-package services.src.main.java.ch.fhnw.pizza.controller;
+package ch.fhnw.pizza.controller;
 
-import services.src.main.java.business.CollaborationsList;
-import services.src.main.java.data.domain.JobAdvertisement;
+import ch.fhnw.pizza.business.service.CollaborationsList;
+import ch.fhnw.pizza.data.domain.JobAdvertisement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

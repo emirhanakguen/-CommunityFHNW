@@ -1,4 +1,6 @@
-package services.src.main.java.ch.fhnw.pizza.data.domain;
+package ch.fhnw.pizza.data.domain;
+
+import java.security.Timestamp;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
@@ -15,7 +17,7 @@ public class AdminActions{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "ActionID")
-    private Int ActionID;
+    private int ActionID;
 
     @Column(name = "ActionType")
     private Actiontype ActionType;
@@ -23,16 +25,16 @@ public class AdminActions{
     @Column(name = "TimeStamp")
     private Timestamp TimeStamp;
 
-public AdminActions(Int ActionID,Actiontype ActionType,
+public AdminActions(int ActionID,Actiontype ActionType,
     Timestamp TimeStamp) {
     this.ActionID = ActionID;
     this.ActionType = ActionType;
     this.TimeStamp = TimeStamp;
     }
-public Int getActionID(){
+public int getActionID(){
     return ActionID;
 }
-public void setActionID(Int ActionID){
+public void setActionID(int ActionID){
     this.ActionID = ActionID;
 }
 public Actiontype getActionType(){
@@ -50,4 +52,8 @@ public Timestamp getTimeStamp(){
 public void setTimeStamp(Timestamp TimeStamp){
     this.TimeStamp = TimeStamp;
     }
+public void setType(String type) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'setType'");
+}
 }

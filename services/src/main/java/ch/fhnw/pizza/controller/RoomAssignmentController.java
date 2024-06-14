@@ -1,7 +1,8 @@
-package services.src.main.java.ch.fhnw.pizza.controller;
+package ch.fhnw.pizza.controller;
 
-import services.src.main.java.business.CollaborationsList;
-import services.src.main.java.data.domain.RoomAssignment;
+import ch.fhnw.pizza.business.service.CollaborationsList;
+import ch.fhnw.pizza.data.domain.RoomAssignment;
+import ch.fhnw.pizza.data.repository.RoomAssignmentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/roomassignment")
 public class RoomAssignmentController {
+
+    @Autowired
+    private RoomAssignmentRepository roomAssignmentRepository;
 
     @PostMapping(path = "/api/rooms/assign",consumes = "application/json",produces = "application/json")
     public ResponseEntity<RoomAssignment> createRoomAssignment(@RequestBody RoomAssignment roomAssignment) {

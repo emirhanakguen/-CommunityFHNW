@@ -1,4 +1,6 @@
-package services.src.main.java.ch.fhnw.pizza.data.domain;
+package ch.fhnw.pizza.data.domain;
+
+import java.security.Timestamp;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
@@ -15,7 +17,7 @@ public class ForumPost{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "PostID")
-    private Int PostID;
+    private int PostID;
 
     @Column(name = "Content")
     private String Content;
@@ -26,17 +28,17 @@ public class ForumPost{
     @Column(name = "CreationTime")
     private Timestamp CreationTime;
 
-public ForumPost(Int PostID,String Content,String Topic,
+public ForumPost(int PostID,String Content,String Topic,
     Timestamp CreationTime){
     this.PostID = PostID;
     this.Content = Content;
     this.Topic = Topic;
     this.CreationTime = CreationTime;
 }
-public Int getPostID(){
+public int getPostID(){
     return PostID;
 }
-public void setPostID(Int PostID){
+public void setPostID(int PostID){
     this.PostID = PostID;
 }
 public String getContent(){

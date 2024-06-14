@@ -1,7 +1,8 @@
-package services.src.main.java.ch.fhnw.pizza.controller;
+package ch.fhnw.pizza.controller;
 
-import services.src.main.java.business.CollaborationsList;
-import services.src.main.java.data.domain.SystemLog;
+import ch.fhnw.pizza.business.service.CollaborationsList;
+import ch.fhnw.pizza.data.domain.SystemLog;
+import ch.fhnw.pizza.data.repository.SystemLogRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/systemlog")
 public class SystemLogController {
+
+    @Autowired
+    private SystemLogRepository systemLogRepository;
 
     @GetMapping(path = "/api/admin/logs",produces = "application/json")
     public ResponseEntity<List<SystemLog>> getAllSystemLogs() {

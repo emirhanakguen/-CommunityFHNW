@@ -1,4 +1,6 @@
-package services.src.main.java.ch.fhnw.pizza.data.domain;
+package ch.fhnw.pizza.data.domain;
+
+import java.security.Timestamp;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
@@ -15,13 +17,13 @@ public class RoomAssignment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "RoomID")
-    private Int RoomID;
+    private int RoomID;
 
     @Column(name = "Building")
     private String Building;
 
     @Column(name = "Capacity")
-    private Int Capacity;
+    private int Capacity;
 
     @Column(name = "Resources")
     private String Resources;
@@ -32,7 +34,7 @@ public class RoomAssignment {
     @Column(name = "EndTime")
     private Timestamp EndTime;
 
-public RoomAssignment(Int RoomID,String Building,Int Capacity,
+public RoomAssignment(int RoomID,String Building,int Capacity,
     String Resources,Timestamp StartTime,Timestamp EndTime){
         this.RoomID = RoomID;
         this.Building = Building;
@@ -41,10 +43,10 @@ public RoomAssignment(Int RoomID,String Building,Int Capacity,
         this.StartTime = StartTime;
         this.EndTime = EndTime;
 }
-public Int getRoomID(){
+public int getRoomID(){
     return RoomID;
 }
-public void setRoomID(Int RoomID){
+public void setRoomID(int RoomID){
     this.RoomID = RoomID;
 }
 public String getBuilding(){
@@ -53,10 +55,10 @@ public String getBuilding(){
 public void setBuilding(String Building){
     this.Building = Building;
 }
-public Int getCapacity(){
+public int getCapacity(){
     return Capacity;
 }
-public void setCapacity(Int Capacity){
+public void setCapacity(int Capacity){
     this.Capacity = Capacity;
 }
 public String getResources(){

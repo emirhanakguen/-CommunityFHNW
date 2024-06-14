@@ -1,4 +1,6 @@
-package services.src.main.java.ch.fhnw.pizza.data.domain;
+package ch.fhnw.pizza.data.domain;
+
+import java.security.Timestamp;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
@@ -15,7 +17,7 @@ public class TutoringSession{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "SessionID")
-    private Int SessionId;
+    private int SessionID;
 
     @Column(name = "Subject")
     private String Subject;
@@ -23,8 +25,8 @@ public class TutoringSession{
     @Column(name = "Description")
     private String Description;
 
-    @Column(name = "Reccuring")
-    private Boolean Reccuring;
+    @Column(name = "Recurring")
+    private Boolean Recurring;
 
     @Column(name = "StartTime")
     private Timestamp StartTime;
@@ -35,21 +37,21 @@ public class TutoringSession{
     @Column(name = "Status")
     private SessionStatus Status;
 
-public TutoringSession(Int SessionID,String Subject,
-    String Description,Boolean Reccuring,Timestamp StartTime,
+public TutoringSession(int SessionID,String Subject,
+    String Description,Boolean Recurring,Timestamp StartTime,
     Timestamp EndTime,SessionStatus Status){
     this.SessionID = SessionID;
     this.Subject = Subject;
     this.Description = Description;
-    this.Reccuring = Reccuring;
+    this.Recurring = Recurring;
     this.StartTime = StartTime;
     this.EndTime = EndTime;
     this.Status = Status;
 }
-public Int getSessionID(){
+public int getSessionID(){
         return SessionID;
 }
-public void setSessionID(Int SessionID){
+public void setSessionID(int SessionID){
     this.SessionID = SessionID;
 }
 public String getSubject(){
@@ -65,10 +67,10 @@ public void setDescription(String Description){
     this.Description = Description;
 }
 public Boolean getReccuring(){
-    return Reccuring;
+    return Recurring;
 }
 public void setRecurring(Boolean Reccuring){
-    this.Reccuring = Reccuring;
+    this.Recurring = Reccuring;
 }
 public Timestamp getStartTime(){
     return StartTime;

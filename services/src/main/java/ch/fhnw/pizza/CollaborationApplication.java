@@ -1,4 +1,4 @@
-package services.src.main.java.ch.fhnw.pizza;
+package ch.fhnw.pizza;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -6,19 +6,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import services.src.main.java.business.CollaborationsList;
-import services.src.main.java.data.domain.AccountManagement;
-import services.src.main.java.data.domain.AdminActions;
-import services.src.main.java.data.domain.BuddySystem;
-import services.src.main.java.data.domain.ForumPost;
-import services.src.main.java.data.domain.ForumResponse;
-import services.src.main.java.data.domain.IndependentProject;
-import services.src.main.java.data.domain.JobAdvertisement;
-import services.src.main.java.data.domain.MentoringForProjects;
-import services.src.main.java.data.domain.RoomAssignment;
-import services.src.main.java.data.domain.SystemLog;
-import services.src.main.java.data.domain.TutoringSession;
-import services.src.main.java.data.domain.User;
+import ch.fhnw.pizza.business.service.CollaborationsList;
+import ch.fhnw.pizza.data.domain.AccountManagement;
+import ch.fhnw.pizza.data.domain.AdminActions;
+import ch.fhnw.pizza.data.domain.BuddySystem;
+import ch.fhnw.pizza.data.domain.ForumPost;
+import ch.fhnw.pizza.data.domain.ForumResponse;
+import ch.fhnw.pizza.data.domain.IndependentProject;
+import ch.fhnw.pizza.data.domain.JobAdvertisement;
+import ch.fhnw.pizza.data.domain.MentoringForProjects;
+import ch.fhnw.pizza.data.domain.RoomAssignment;
+import ch.fhnw.pizza.data.domain.SystemLog;
+import ch.fhnw.pizza.data.domain.TutoringSession;
+import ch.fhnw.pizza.data.domain.User;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.PostConstruct;
 

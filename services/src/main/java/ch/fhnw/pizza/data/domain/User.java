@@ -1,4 +1,4 @@
-package services.src.main.java.ch.fhnw.pizza.data.domain;
+package ch.fhnw.pizza.data.domain;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
@@ -15,7 +15,7 @@ public class User{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "UserID")
-    private Int UserID;
+    private int UserID;
 
     @Column(name = "Username")
     private String Username;
@@ -32,7 +32,7 @@ public class User{
     @Column(name = "PhoneNumber")
     private String PhoneNumber;
 
-public User(Int UserID,String Username,String Password,
+public User(int UserID,String Username,String Password,
     UserRole Role,String Email,String PhoneNumber){
     this.UserID = UserID;
     this.Username = Username;
@@ -41,10 +41,10 @@ public User(Int UserID,String Username,String Password,
     this.Email = Email;
     this.PhoneNumber = PhoneNumber;
 }
-public Int getUserID(){
+public int getUserID(){
     return UserID;
 }
-public void setUserID(Int UserID){
+public void setUserID(int UserID){
     this.UserID = UserID;
 }
 public String getUsername(){
@@ -80,4 +80,16 @@ public String getPhoneNumber(){
 public void setPhoneNumber(String PhoneNumber){
     this.PhoneNumber = PhoneNumber;
     }
+public Long getId(int userID2) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getId'");
+}
+public Object getSomeProperty() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getSomeProperty'");
+}
+public void setSomeProperty(Object someProperty) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'setSomeProperty'");
+}
 }

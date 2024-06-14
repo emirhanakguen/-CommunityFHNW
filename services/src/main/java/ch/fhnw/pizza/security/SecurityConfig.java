@@ -1,4 +1,4 @@
-package services.src.main.java.security;
+package ch.fhnw.pizza.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

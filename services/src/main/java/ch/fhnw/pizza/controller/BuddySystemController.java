@@ -1,7 +1,8 @@
-package services.src.main.java.ch.fhnw.pizza.controller;
+package ch.fhnw.pizza.controller;
 
-import services.src.main.java.business.CollaborationsList;
-import services.src.main.java.data.domain.BuddySystem;
+import ch.fhnw.pizza.business.service.CollaborationsList;
+import ch.fhnw.pizza.data.domain.BuddySystem;
+import ch.fhnw.pizza.data.repository.BuddySystemRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/buddysystem")
 public class BuddySystemController {
+
+    @Autowired
+    private BuddySystemRepository buddySystemRepository;
 
     @PostMapping(path = "/api/buddy/volunteer",consumes = "application/json",produces = "application/json")
     public ResponseEntity<BuddySystem> createBuddySystem(@RequestBody BuddySystem buddySystem) {

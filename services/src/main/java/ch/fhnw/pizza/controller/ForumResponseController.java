@@ -1,7 +1,8 @@
-package services.src.main.java.ch.fhnw.pizza.controller;
+package ch.fhnw.pizza.controller;
 
-import services.src.main.java.business.CollaborationsList;
-import services.src.main.java.data.domain.ForumResponse;
+import ch.fhnw.pizza.business.service.CollaborationsList;
+import ch.fhnw.pizza.data.domain.ForumResponse;
+import ch.fhnw.pizza.data.repository.ForumResponseRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/forumresponse")
 public class ForumResponseController {
+
+    @Autowired
+    private ForumResponseRepository forumResponseRepository;
 
     @PostMapping(path = "/api/forum/posts/{postId}/responses", consumes = "application/json", produces = "application/json")
     public ResponseEntity<ForumResponse> createForumResponse(@PathVariable Long postId, @RequestBody ForumResponse forumResponse) {

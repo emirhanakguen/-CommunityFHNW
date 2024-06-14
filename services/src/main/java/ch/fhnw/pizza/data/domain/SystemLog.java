@@ -1,4 +1,6 @@
-package services.src.main.java.ch.fhnw.pizza.data.domain;
+package ch.fhnw.pizza.data.domain;
+
+import java.security.Timestamp;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
@@ -15,7 +17,7 @@ public class SystemLog{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "LogID")
-    private Int LogID;
+    private int LogID;
 
     @Column(name = "TimeStamp")
     private Timestamp TimeStamp;
@@ -23,15 +25,15 @@ public class SystemLog{
     @Column(name = "Description")
     private String Description;
 
-public SystemLog(Int LogID,Timestamp TimeStamp,String Description){
+public SystemLog(int LogID,Timestamp TimeStamp,String Description){
     this.LogID = LogID;
     this.TimeStamp = TimeStamp;
     this.Description = Description;
 }
-public Int getLogID(){
+public int getLogID(){
     return LogID;
 }
-public void setLogID(Int LogID){
+public void setLogID(int LogID){
     this.LogID = LogID;
 }
 public Timestamp getTimeStamp(){

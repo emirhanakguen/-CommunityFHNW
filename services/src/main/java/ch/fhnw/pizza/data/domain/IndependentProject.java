@@ -1,4 +1,6 @@
-package services.src.main.java.ch.fhnw.pizza.data.domain;
+package ch.fhnw.pizza.data.domain;
+
+import java.security.Timestamp;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
@@ -15,7 +17,7 @@ public class IndependentProject{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "ProjectID")
-    private Int ProjectID;
+    private int ProjectID;
 
     @Column(name = "ProjectName")
     private String ProjectName;
@@ -23,7 +25,7 @@ public class IndependentProject{
     @Column(name = "Description")
     private String Description;
 
-    @Column(name = "Reccuring")
+    @Column(name = "Recurring")
     private Boolean Recurring;
 
     @Column(name = "StartTime")
@@ -32,19 +34,19 @@ public class IndependentProject{
     @Column(name = "EndTime")
     private Timestamp EndTime;
 
-public IndependentProject(Int ProjectID,String ProjectName,
-    String Description,Boolean Reccuring,Timestamp StartTime,Timestamp EndTime){
+public IndependentProject(int ProjectID,String ProjectName,
+    String Description,Boolean Recurring,Timestamp StartTime,Timestamp EndTime){
     this.ProjectID = ProjectID;
     this.ProjectName = ProjectName;
     this.Description = Description;
-    this.Reccuring = Reccuring;
+    this.Recurring = Recurring;
     this.StartTime = StartTime;
     this.EndTime = EndTime;  
 }
-public Int getProjectID(){
+public int getProjectID(){
     return ProjectID;
 }
-public void setProjectID(Int ProjectID){
+public void setProjectID(int ProjectID){
     this.ProjectID = ProjectID;
 }
 public String getProjectName(){
@@ -60,10 +62,10 @@ public void setDescription(String Description){
     this.Description = Description;
 }
 public Boolean getReccuring(){
-    return Reccuring;
+    return Recurring;
 }
 public void setReccuring(Boolean Reccuring){
-    this.Reccuring = Reccuring;
+    this.Recurring = Reccuring;
 }
 public Timestamp getStartTime(){
     return StartTime;
