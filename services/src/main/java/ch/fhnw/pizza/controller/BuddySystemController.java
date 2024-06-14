@@ -29,5 +29,14 @@ public class BuddySystemController {
         List<BuddySystem> buddySystems = buddySystemRepository.findByLanguage(language);
         return ResponseEntity.ok(buddySystems);
     }
-      
+    @PostMapping(value = "/api/admin/buddy/assign",consumes = "application/json",produces = "application/json")
+    public ResponseEntity<String> assignBuddyToInternationalStudent(@RequestBody BuddyAssignmentRequest request) {
+        boolean assignmentSuccessful = buddyAssignmentService.assignBuddy(request.getInternationalStudentId(), request.getBuddyId());
+        if (assignmentSuccessful) {
+            return ResponseEntity.status(HttpStatus.CREATED).body("Buddy assigned successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to assign buddy.");
+        }
+    } 
+ 
 } 
