@@ -51,11 +51,9 @@ public void setTimeStamp(String TimeStamp){
     this.TimeStamp = TimeStamp;
     }
 public Object getSomeProperty() {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'getSomeProperty'");
 }
 public void setSomeProperty(Object someProperty) {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'setSomeProperty'");
 }
 }

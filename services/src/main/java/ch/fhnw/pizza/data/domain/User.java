@@ -81,23 +81,18 @@ public void setPhoneNumber(String PhoneNumber){
     this.PhoneNumber = PhoneNumber;
     }
 public Long getId(int userID2) {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'getId'");
 }
 public Object getSomeProperty() {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'getSomeProperty'");
 }
 public void setSomeProperty(Object someProperty) {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'setSomeProperty'");
 }
 public boolean isPresent() {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'isPresent'");
 }
 public User get() {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'get'");
 }
 }

@@ -1,7 +1,5 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.security.Timestamp;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -50,7 +48,6 @@ public void setResponseTime(String d){
     this.ResponseTime = d;
     }
 public void setPostId(Long postId) {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'setPostId'");
 }
 } 

@@ -18,12 +18,12 @@ public class AdminActions{
     private long ActionID;
 
     @Column(name = "ActionType")
-    private Actiontype ActionType;
+    private Actiontypes ActionType;
 
     @Column(name = "TimeStamp")
     private String TimeStamp;
 
-public AdminActions(long ActionID,Actiontype ActionType,
+public AdminActions(long ActionID,Actiontypes ActionType,
     String TimeStamp) {
     this.ActionID = ActionID;
     this.ActionType = ActionType;
@@ -35,13 +35,13 @@ public long getActionID(){
 public void setActionID(long ActionID){
     this.ActionID = ActionID;
 }
-public Actiontype getActionType(){
+public Actiontypes getActionType(){
     return ActionType;
 }
-public void setActionType(ch.fhnw.pizza.data.domain.AdminActions.Actiontype delete){
+public void setActionType(ch.fhnw.pizza.data.domain.AdminActions.Actiontypes delete){
     this.ActionType = delete;
 }
-public enum Actiontype {
+public enum Actiontypes {
     MODIFY, DELETE, ASSIGN
 }
 public String getTimeStamp(){
@@ -51,7 +51,6 @@ public void setTimeStamp(String TimeStamp){
     this.TimeStamp = TimeStamp;
     }
 public void setType(String type) {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'setType'");
 }
 }

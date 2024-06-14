@@ -48,7 +48,7 @@ public class CollaborationApplication {
 		collaborationsList.createAccountManagement(am);
 
 		AdminActions aa = new AdminActions(0, null, null);
-		aa.setActionType(Actiontype.DELETE);
+		aa.setActionType(Actiontypes.DELETE);
 		aa.setTimeStamp("2024-11-07-14.32");
 		collaborationsList.updateAdminAction(0, aa);
 
