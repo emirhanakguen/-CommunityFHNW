@@ -1,6 +1,5 @@
 package ch.fhnw.pizza.controller;
 
-import ch.fhnw.pizza.business.service.CollaborationsList;
 import ch.fhnw.pizza.data.domain.AccountManagement;
 import ch.fhnw.pizza.data.repository.AccountManagementRepository;
 
@@ -8,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -30,8 +27,6 @@ public class AccountManagementController {
         AccountManagement savedAccount = accountManagementRepository.save(existingAccount);
         return ResponseEntity.ok(savedAccount);
     } catch (Exception e) {
-        return ResponseEntity.notFound().build();
-    }catch (Exception e){
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
 }
@@ -53,7 +48,6 @@ public class AccountManagementController {
     @PostMapping(path = "/api/superadmin/admins/create",consumes = "application/json",produces = "application/json")
     public ResponseEntity<?> createAccountManagement(@RequestBody AccountManagement accountManagement) {
     try {
-        AccountManagement savedAccount = accountManagementRepository.save(accountManagement);
         return ResponseEntity.ok("Account management record created successfully.");
     } catch (Exception e) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

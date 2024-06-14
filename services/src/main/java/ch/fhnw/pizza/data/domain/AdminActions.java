@@ -1,7 +1,5 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.security.Timestamp;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,39 +15,39 @@ public class AdminActions{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "ActionID")
-    private int ActionID;
+    private long ActionID;
 
     @Column(name = "ActionType")
     private Actiontype ActionType;
 
     @Column(name = "TimeStamp")
-    private Timestamp TimeStamp;
+    private String TimeStamp;
 
-public AdminActions(int ActionID,Actiontype ActionType,
-    Timestamp TimeStamp) {
+public AdminActions(long ActionID,Actiontype ActionType,
+    String TimeStamp) {
     this.ActionID = ActionID;
     this.ActionType = ActionType;
     this.TimeStamp = TimeStamp;
     }
-public int getActionID(){
+public long getActionID(){
     return ActionID;
 }
-public void setActionID(int ActionID){
+public void setActionID(long ActionID){
     this.ActionID = ActionID;
 }
 public Actiontype getActionType(){
     return ActionType;
 }
-public void setActionType(Actiontype ActionType){
-    this.ActionType = ActionType;
+public void setActionType(ch.fhnw.pizza.data.domain.AdminActions.Actiontype delete){
+    this.ActionType = delete;
 }
 public enum Actiontype {
     MODIFY, DELETE, ASSIGN
 }
-public Timestamp getTimeStamp(){
+public String getTimeStamp(){
     return TimeStamp;
 }
-public void setTimeStamp(Timestamp TimeStamp){
+public void setTimeStamp(String TimeStamp){
     this.TimeStamp = TimeStamp;
     }
 public void setType(String type) {

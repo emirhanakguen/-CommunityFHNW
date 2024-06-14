@@ -1,6 +1,5 @@
 package ch.fhnw.pizza.controller;
 
-import ch.fhnw.pizza.business.service.CollaborationsList;
 import ch.fhnw.pizza.data.repository.AdminActionsRepository;
 import ch.fhnw.pizza.data.repository.ForumPostRepository;
 import ch.fhnw.pizza.data.domain.AdminActions;
@@ -11,10 +10,8 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/adminactions")
@@ -57,11 +54,16 @@ public class AdminActionsController {
         }
 }
     @PutMapping(path = "/api/forum/edit/{postId}")
-    public ResponseEntity<ForumPost> updateForumPost(@PathVariable Long postId, @RequestBody ForumPost updatedPost) {
-        ForumPost existingPost = forumPostRepository.findById(postId)
-        .orElseThrow(() -> new ResourceNotFoundException("ForumPost not found with ID: " + postId));
-        ForumPost savedPost = forumPostRepository.save(existingPost);
-        return ResponseEntity.ok(savedPost);
+    public ResponseEntity<ForumPost> updateForumPost(@PathVariable Long postId, @RequestBody ForumPost updatedPost) throws Exception {
+        ForumPost existingPost;
+        try {
+            existingPost = forumPostRepository.findById(postId).get();
+            ForumPost savedPost = forumPostRepository.save(existingPost);
+            return ResponseEntity.ok(savedPost);
+        }catch(Exception e){
+            new Exception("ForumPost not found with ID: " + postId);
+        }
+        return null;
 }
     @GetMapping(path = "/api/auth/login/{adminId}",produces = "application/json")
     public ResponseEntity<String> showAdminContent(Principal principal) {

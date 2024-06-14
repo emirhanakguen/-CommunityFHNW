@@ -15,7 +15,7 @@ public class User{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "UserID")
-    private int UserID;
+    private long UserID;
 
     @Column(name = "Username")
     private String Username;
@@ -32,7 +32,7 @@ public class User{
     @Column(name = "PhoneNumber")
     private String PhoneNumber;
 
-public User(int UserID,String Username,String Password,
+public User(long UserID,String Username,String Password,
     UserRole Role,String Email,String PhoneNumber){
     this.UserID = UserID;
     this.Username = Username;
@@ -41,10 +41,10 @@ public User(int UserID,String Username,String Password,
     this.Email = Email;
     this.PhoneNumber = PhoneNumber;
 }
-public int getUserID(){
+public long getUserID(){
     return UserID;
 }
-public void setUserID(int UserID){
+public void setUserID(long UserID){
     this.UserID = UserID;
 }
 public String getUsername(){
@@ -91,5 +91,13 @@ public Object getSomeProperty() {
 public void setSomeProperty(Object someProperty) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'setSomeProperty'");
+}
+public boolean isPresent() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'isPresent'");
+}
+public User get() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'get'");
 }
 }

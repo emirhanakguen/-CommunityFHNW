@@ -1,7 +1,6 @@
 package ch.fhnw.pizza.business.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,8 +69,8 @@ public class CollaborationsList {
     @Autowired
     private UserRepository userRepository;
 
-    public AccountManagement updateAccountManagement(int ManagementID, AccountManagement updatedAccount) throws Exception {
-        AccountManagement existingAccount = accountManagementRepository.findById(ManagementID);
+    public AccountManagement updateAccountManagement(long ManagementID, AccountManagement updatedAccount) throws Exception {
+        AccountManagement existingAccount = accountManagementRepository.findById(ManagementID).get();
         if(existingAccount != null){
             if(updatedAccount.getActionType() != null)
                 existingAccount.setActionType(updatedAccount.getActionType());
@@ -82,7 +81,7 @@ public class CollaborationsList {
             throw new Exception("Account not found with ID: " + ManagementID);
     }
 
-    public void deleteAccountManagement(int ManagementID) throws Exception{
+    public void deleteAccountManagement(long ManagementID) throws Exception{
         if(accountManagementRepository.existsById(ManagementID)){
             accountManagementRepository.deleteById(ManagementID);
         } else 
@@ -98,8 +97,8 @@ public class CollaborationsList {
         throw new Exception("Invalid action type");  
     } 
 
-    public AdminActions updateAdminAction(int ActionID,AdminActions adminAction) throws Exception {
-        AdminActions existingAction = adminActionsRepository.findById(ActionID).orElse(null);
+    public AdminActions updateAdminAction(long ActionID,AdminActions adminAction) throws Exception {
+        AdminActions existingAction = adminActionsRepository.findById(ActionID).get();
         if(existingAction != null){
             if(adminAction.getActionType() != null)
                 existingAction.setActionType(adminAction.getActionType());
@@ -110,7 +109,7 @@ public class CollaborationsList {
             throw new Exception("Action not found with ID: " + ActionID);
     }
 
-    public void deleteAdminAction(int ActionID) {
+    public void deleteAdminAction(long ActionID) throws Exception {
         if (adminActionsRepository.existsById(ActionID)) {
             adminActionsRepository.deleteById(ActionID);
         } else {
@@ -118,15 +117,15 @@ public class CollaborationsList {
         }
     }
 
-    public void deleteForumPost(int PostID) throws Exception{
+    public void deleteForumPost(long PostID) throws Exception{
         if(forumPostRepository.existsById(PostID)){
             forumPostRepository.deleteByPostId(PostID);
         } else
             throw new Exception("Post with id " + PostID + " not found.");
     }
 
-    public ForumPost updateForumPost(int PostID,ForumPost updatedPost) throws Exception{
-        ForumPost existingPost = forumPostRepository.findById(PostID);
+    public ForumPost updateForumPost(long PostID,ForumPost updatedPost) throws Exception{
+        ForumPost existingPost = forumPostRepository.findById(PostID).get();
         if(existingPost != null){
             if(updatedPost.getContent() != null)
                 existingPost.setContent(updatedPost.getContent());
@@ -212,7 +211,7 @@ public class CollaborationsList {
         throw new Exception("Invalid building");
     }
 
-    public List<SystemLog> getAllSystemLogs() {
+    public List<SystemLog> getAllSystemLogs(SystemLog sl) {
         List<SystemLog> systemLogs = systemLogRepository.findAll();
         return systemLogs;
     }
@@ -240,8 +239,8 @@ public class CollaborationsList {
             throw new Exception("Invalid user name");
     }
 
-    public User updateUser(int UserID,User updatedUser) throws Exception{
-        User existingUser = userRepository.findById(updatedUser.getUserID());
+    public User updateUser(long UserID,User updatedUser) throws Exception{
+        User existingUser = userRepository.findById(UserID).get();
         if(existingUser != null){
             if(updatedUser.getUsername() != null)
                 existingUser.setUsername(updatedUser.getUsername());
@@ -258,7 +257,7 @@ public class CollaborationsList {
         throw new Exception("User with id " + UserID + " not available.");
     }
     
-    public void deleteUser(int UserID) throws Exception{
+    public void deleteUser(long UserID) throws Exception{
         if(userRepository.existsById(UserID)){
             userRepository.deleteById(UserID);
         }else{

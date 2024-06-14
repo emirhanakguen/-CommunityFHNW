@@ -1,7 +1,5 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.security.Timestamp;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,17 +27,17 @@ public class TutoringSession{
     private Boolean Recurring;
 
     @Column(name = "StartTime")
-    private Timestamp StartTime;
+    private String StartTime;
 
     @Column(name = "EndTime")
-    private Timestamp EndTime;
+    private String EndTime;
 
     @Column(name = "Status")
     private SessionStatus Status;
 
 public TutoringSession(int SessionID,String Subject,
-    String Description,Boolean Recurring,Timestamp StartTime,
-    Timestamp EndTime,SessionStatus Status){
+    String Description,Boolean Recurring,String StartTime,
+    String EndTime,SessionStatus Status){
     this.SessionID = SessionID;
     this.Subject = Subject;
     this.Description = Description;
@@ -69,20 +67,20 @@ public void setDescription(String Description){
 public Boolean getReccuring(){
     return Recurring;
 }
-public void setRecurring(Boolean Reccuring){
-    this.Recurring = Reccuring;
+public void setRecurring(Boolean Recurring){
+    this.Recurring = Recurring;
 }
-public Timestamp getStartTime(){
+public String getStartTime(){
     return StartTime;
 }
-public void setStartTime(Timestamp StartTime){
-    this.StartTime = StartTime;
+public void setStartTime(String d){
+    this.StartTime = d;
 }
-public Timestamp getEndTime(){
+public String getEndTime(){
     return EndTime;
 }
-public void setEndTime(Timestamp EndTime){
-    this.EndTime = EndTime;
+public void setEndTime(String d){
+    this.EndTime = d;
 }
 public SessionStatus getStatus(){
     return Status;
