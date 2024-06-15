@@ -18,12 +18,12 @@ public class BuddyAssignment {
     private long AdminID;
 
     @Column(name = "internationalstudentId")
-    private long internationalstudentId;
+    private String internationalstudentId;
 
     @Column(name = "buddyId")
     private long buddyId;
 
-public BuddyAssignment(long AdminID,long internationalstudentId,
+public BuddyAssignment(long AdminID,String internationalstudentId,
     long buddyId) {
     this.AdminID = AdminID;
     this.internationalstudentId = internationalstudentId;
@@ -35,10 +35,10 @@ public long getAdminID(){
 public void setAdminID(long AdminID){
     this.AdminID = AdminID;
 }
-public long getinternationalstudentId(){
+public String getinternationalstudentId(){
     return internationalstudentId;
 }
-public void setinternationalstudentId(long internationalstudentId){
+public void setinternationalstudentId(String internationalstudentId){
     this.internationalstudentId = internationalstudentId;
 }
 public long getbuddyId(){

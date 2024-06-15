@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import ch.fhnw.pizza.data.domain.AccountManagement;
 import ch.fhnw.pizza.data.domain.AdminActions;
 import ch.fhnw.pizza.data.domain.Advertisement;
+import ch.fhnw.pizza.data.domain.BuddyAssignment;
 import ch.fhnw.pizza.data.domain.BuddySystem;
 import ch.fhnw.pizza.data.domain.ForumPost;
 import ch.fhnw.pizza.data.domain.ForumResponse;
@@ -21,6 +22,7 @@ import ch.fhnw.pizza.data.domain.User;
 import ch.fhnw.pizza.data.repository.AccountManagementRepository;
 import ch.fhnw.pizza.data.repository.AdminActionsRepository;
 import ch.fhnw.pizza.data.repository.AdvertisementRepository;
+import ch.fhnw.pizza.data.repository.BuddyAssignmentRepository;
 import ch.fhnw.pizza.data.repository.BuddySystemRepository;
 import ch.fhnw.pizza.data.repository.ForumPostRepository;
 import ch.fhnw.pizza.data.repository.ForumResponseRepository;
@@ -46,6 +48,9 @@ public class CollaborationsList {
 
     @Autowired
     private BuddySystemRepository buddySystemRepository;
+
+    @Autowired
+    private BuddyAssignmentRepository buddyAssignmentRepository;
 
     @Autowired
     private ForumPostRepository forumPostRepository;
@@ -164,6 +169,15 @@ public class CollaborationsList {
     public List<BuddySystem> getAllBuddySystems(String Languages) {
         List<BuddySystem> buddySystems = buddySystemRepository.findByLanguages(Languages);
         return buddySystems;
+    }
+
+    public BuddyAssignment assignBuddyToInternationalStudent(BuddyAssignment buddyAssignment) throws Exception {
+        if(buddyAssignment.getinternationalstudentId() != null){
+            if(buddyAssignmentRepository.findByinternationalstudentId(buddyAssignment.getinternationalstudentId()) == null)
+                return buddyAssignmentRepository.save(buddyAssignment);
+            throw new Exception("Post with " + buddyAssignment.getinternationalstudentId() + " topic already available.");
+        }
+        throw new Exception("Invalid topic");
     }
 
     public ForumPost createForumPost(ForumPost forumPost) throws Exception {
