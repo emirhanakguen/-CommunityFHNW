@@ -10,6 +10,8 @@ import ch.fhnw.pizza.data.domain.AccountManagement;
 import ch.fhnw.pizza.data.domain.AccountManagement.Actiontype;
 import ch.fhnw.pizza.data.domain.AdminActions;
 import ch.fhnw.pizza.data.domain.AdminActions.Actiontypes;
+import ch.fhnw.pizza.data.domain.Advertisement;
+import ch.fhnw.pizza.data.domain.BuddyAssignment;
 import ch.fhnw.pizza.data.domain.BuddySystem;
 import ch.fhnw.pizza.data.domain.BuddySystem.BuddyStatus;
 import ch.fhnw.pizza.data.domain.ForumPost;
@@ -53,10 +55,20 @@ public class CollaborationApplication {
 		aa.setTimeStamp("2024-11-07-14.32");
 		collaborationsList.updateAdminAction(0, aa);
 
+		Advertisement a = new Advertisement(0, null, null);
+		a.settitle("Project support for BI");
+		a.setcontent("Base knowledge and support for BI");
+		collaborationsList.createAdvertisement(a);
+
 		BuddySystem bs = new BuddySystem(0, null, null);
 		bs.setLanguages("English, Italian");
 		bs.setStatus(BuddyStatus.ACTIVE);
 		collaborationsList.createBuddySystem(bs);
+
+		BuddyAssignment ba = new BuddyAssignment(0, null, 0);
+		ba.setinternationalstudentId("3Tewr");
+		ba.setbuddyId(23);
+		collaborationsList.createBuddyAssingment(ba);
 
 		ForumPost fp = new ForumPost(0, null, null, null);
 		fp.setContent("Exam dates are going to be published in one week");

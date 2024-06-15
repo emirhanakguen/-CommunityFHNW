@@ -171,11 +171,11 @@ public class CollaborationsList {
         return buddySystems;
     }
 
-    public BuddyAssignment assignBuddyToInternationalStudent(BuddyAssignment buddyAssignment) throws Exception {
-        if(buddyAssignment.getinternationalstudentId() != null){
-            if(buddyAssignmentRepository.findByinternationalstudentId(buddyAssignment.getinternationalstudentId()) == null)
-                return buddyAssignmentRepository.save(buddyAssignment);
-            throw new Exception("Post with " + buddyAssignment.getinternationalstudentId() + " topic already available.");
+    public BuddyAssignment createBuddyAssingment(BuddyAssignment bs) throws Exception {
+        if(bs.getinternationalstudentId() != null){
+            if(buddyAssignmentRepository.findByinternationalstudentId(bs.getinternationalstudentId()) == null)
+                return buddyAssignmentRepository.save(bs);
+            throw new Exception("Post with " + bs.getinternationalstudentId() + " topic already available.");
         }
         throw new Exception("Invalid topic");
     }

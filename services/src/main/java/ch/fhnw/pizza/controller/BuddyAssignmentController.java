@@ -15,7 +15,7 @@ public class BuddyAssignmentController {
     private BuddyAssignmentRepository buddyAssignmentRepository;
 
     @PostMapping(value = "/api/admin/buddy/assign",consumes = "application/json",produces = "application/json")
-    public ResponseEntity<String> assignBuddyToInternationalStudent(@RequestBody BuddyAssignment buddyassignment) {
+    public ResponseEntity<String> createBuddyAssingment(@RequestBody BuddyAssignment buddyassignment) {
         boolean assignmentSuccessful = buddyAssignmentRepository.assignbuddy(buddyassignment.getinternationalstudentId(), buddyassignment.getbuddyId());
         if (assignmentSuccessful) {
             return ResponseEntity.status(HttpStatus.CREATED).body("Buddy assigned successfully!");

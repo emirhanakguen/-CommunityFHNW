@@ -23,7 +23,6 @@ public class BuddySystem {
     @Column(name = "Status")
     private BuddyStatus Status;
 
-
 public BuddySystem(int BuddyPairID,String Languages,
     BuddyStatus Status){
     this.BuddyPairID = BuddyPairID;
