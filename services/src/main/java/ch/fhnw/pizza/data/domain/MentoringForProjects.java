@@ -15,7 +15,7 @@ public class MentoringForProjects{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "ProjectID")
-    private int ProjectID;
+    private long ProjectID;
 
     @Column(name = "Subject")
     private String Subject;
@@ -35,7 +35,7 @@ public class MentoringForProjects{
     @Column(name = "EndTime")
     private String EndTime;
 
-public MentoringForProjects(int ProjectID,String Subject,
+public MentoringForProjects(long ProjectID,String Subject,
     String Description,Boolean Recurring,String ProjectName,
     String StartTime,String EndTime){
     this.ProjectID = ProjectID;
@@ -46,10 +46,10 @@ public MentoringForProjects(int ProjectID,String Subject,
     this.StartTime = StartTime;
     this.EndTime = EndTime;
 }
-public int getProjectID(){
+public long getProjectID(){
     return ProjectID;
 }
-public void setProjectID(int ProjectID){
+public void setProjectID(long ProjectID){
     this.ProjectID = ProjectID;
 }
 public String getSubject(){

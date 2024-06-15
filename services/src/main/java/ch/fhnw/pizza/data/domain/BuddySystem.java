@@ -15,7 +15,7 @@ public class BuddySystem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "BuddyPairID")
-    private int BuddyPairID;
+    private long BuddyPairID;
 
     @Column(name = "Languages")
     private String Languages;
@@ -23,16 +23,16 @@ public class BuddySystem {
     @Column(name = "Status")
     private BuddyStatus Status;
 
-public BuddySystem(int BuddyPairID,String Languages,
+public BuddySystem(long BuddyPairID,String Languages,
     BuddyStatus Status){
     this.BuddyPairID = BuddyPairID;
     this.Languages = Languages;
     this.Status = Status;
 }
-public int getBuddyPairID(){
+public long getBuddyPairID(){
     return BuddyPairID;
 }
-public void setBuddyPairID(int BuddyPairID){
+public void setBuddyPairID(long BuddyPairID){
     this.BuddyPairID = BuddyPairID;
 }
 public String getLanguages(){
