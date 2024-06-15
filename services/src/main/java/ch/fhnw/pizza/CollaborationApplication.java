@@ -9,6 +9,7 @@ import ch.fhnw.pizza.business.service.CollaborationsList;
 import ch.fhnw.pizza.data.domain.AccountManagement;
 import ch.fhnw.pizza.data.domain.AccountManagement.Actiontype;
 import ch.fhnw.pizza.data.domain.AdminActions;
+import ch.fhnw.pizza.data.domain.AdminActions.Actiontypes;
 import ch.fhnw.pizza.data.domain.BuddySystem;
 import ch.fhnw.pizza.data.domain.BuddySystem.BuddyStatus;
 import ch.fhnw.pizza.data.domain.ForumPost;

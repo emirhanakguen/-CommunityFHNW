@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import ch.fhnw.pizza.data.domain.AccountManagement;
 import ch.fhnw.pizza.data.domain.AdminActions;
+import ch.fhnw.pizza.data.domain.Advertisement;
 import ch.fhnw.pizza.data.domain.BuddySystem;
 import ch.fhnw.pizza.data.domain.ForumPost;
 import ch.fhnw.pizza.data.domain.ForumResponse;
@@ -19,6 +20,7 @@ import ch.fhnw.pizza.data.domain.TutoringSession;
 import ch.fhnw.pizza.data.domain.User;
 import ch.fhnw.pizza.data.repository.AccountManagementRepository;
 import ch.fhnw.pizza.data.repository.AdminActionsRepository;
+import ch.fhnw.pizza.data.repository.AdvertisementRepository;
 import ch.fhnw.pizza.data.repository.BuddySystemRepository;
 import ch.fhnw.pizza.data.repository.ForumPostRepository;
 import ch.fhnw.pizza.data.repository.ForumResponseRepository;
@@ -38,6 +40,9 @@ public class CollaborationsList {
 
     @Autowired
     private AdminActionsRepository adminActionsRepository;
+
+    @Autowired
+    private AdvertisementRepository advertisementRepository;
 
     @Autowired
     private BuddySystemRepository buddySystemRepository;
@@ -116,6 +121,15 @@ public class CollaborationsList {
             throw new Exception("Admin action with ID: " + ActionID + " not found.");
         }
     }
+
+    public Advertisement createAdvertisement(Advertisement advertisement) throws Exception {
+        if(advertisement.gettitle() != null){
+            if(advertisementRepository.findBytitle(advertisement.gettitle()) == null)
+                return advertisementRepository.save(advertisement);
+            throw new Exception("Advertisement with the title " + advertisement.gettitle() + " already available");
+        } 
+        throw new Exception("Invalid action type");  
+    } 
 
     public void deleteForumPost(long PostID) throws Exception{
         if(forumPostRepository.existsById(PostID)){

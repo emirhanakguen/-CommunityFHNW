@@ -1,0 +1,51 @@
+package ch.fhnw.pizza.data.domain;
+
+import io.swagger.v3.oas.annotations.Hidden;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Buddy Assignment")
+public class BuddyAssignment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Hidden
+    @Column(name = "AdminID")
+    private long AdminID;
+
+    @Column(name = "internationalstudentId")
+    private long internationalstudentId;
+
+    @Column(name = "buddyId")
+    private long buddyId;
+
+public BuddyAssignment(long AdminID,long internationalstudentId,
+    long buddyId) {
+    this.AdminID = AdminID;
+    this.internationalstudentId = internationalstudentId;
+    this.buddyId = buddyId;
+    }
+public long getAdminID(){
+    return AdminID;
+}
+public void setAdminID(long AdminID){
+    this.AdminID = AdminID;
+}
+public long getinternationalstudentId(){
+    return internationalstudentId;
+}
+public void setinternationalstudentId(long internationalstudentId){
+    this.internationalstudentId = internationalstudentId;
+}
+public long getbuddyId(){
+    return buddyId;
+}
+public void setbuddyId(long buddyId){
+    this.buddyId = buddyId;
+    }
+    
+}
