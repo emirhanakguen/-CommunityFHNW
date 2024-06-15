@@ -15,7 +15,7 @@ public class RoomAssignment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "RoomID")
-    private int RoomID;
+    private long RoomID;
 
     @Column(name = "Building")
     private String Building;
@@ -32,7 +32,7 @@ public class RoomAssignment {
     @Column(name = "EndTime")
     private String EndTime;
 
-public RoomAssignment(int RoomID,String Building,int Capacity,
+public RoomAssignment(long RoomID,String Building,int Capacity,
     String Resources,String StartTime,String EndTime){
         this.RoomID = RoomID;
         this.Building = Building;
@@ -41,10 +41,10 @@ public RoomAssignment(int RoomID,String Building,int Capacity,
         this.StartTime = StartTime;
         this.EndTime = EndTime;
 }
-public int getRoomID(){
+public long getRoomID(){
     return RoomID;
 }
-public void setRoomID(int RoomID){
+public void setRoomID(long RoomID){
     this.RoomID = RoomID;
 }
 public String getBuilding(){

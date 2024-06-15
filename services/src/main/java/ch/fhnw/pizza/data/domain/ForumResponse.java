@@ -15,7 +15,7 @@ public class ForumResponse{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "ResponseID")
-    private int ResponseID;
+    private long ResponseID;
 
     @Column(name = "Content")
     private String Content;
@@ -23,16 +23,16 @@ public class ForumResponse{
     @Column(name = "ResponseTime")
     private String ResponseTime;
 
-public ForumResponse(int ResponseID,String Content,
+public ForumResponse(long ResponseID,String Content,
     String ResponseTime){
     this.ResponseID = ResponseID;
     this.Content = Content;
     this.ResponseTime = ResponseTime;
 }
-public int getResponseID(){
+public long getResponseID(){
     return ResponseID;
 }
-public void setResponseID(int ResponseID){
+public void setResponseID(long ResponseID){
     this.ResponseID = ResponseID;
 }
 public String getContent(){

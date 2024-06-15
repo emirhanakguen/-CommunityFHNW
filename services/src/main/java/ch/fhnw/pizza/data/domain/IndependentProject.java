@@ -15,7 +15,7 @@ public class IndependentProject{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "ProjectID")
-    private int ProjectID;
+    private long ProjectID;
 
     @Column(name = "ProjectName")
     private String ProjectName;
@@ -32,7 +32,7 @@ public class IndependentProject{
     @Column(name = "EndTime")
     private String EndTime;
 
-public IndependentProject(int ProjectID,String ProjectName,
+public IndependentProject(long ProjectID,String ProjectName,
     String Description,Boolean Recurring,String StartTime,String EndTime){
     this.ProjectID = ProjectID;
     this.ProjectName = ProjectName;
@@ -41,10 +41,10 @@ public IndependentProject(int ProjectID,String ProjectName,
     this.StartTime = StartTime;
     this.EndTime = EndTime;  
 }
-public int getProjectID(){
+public long getProjectID(){
     return ProjectID;
 }
-public void setProjectID(int ProjectID){
+public void setProjectID(long ProjectID){
     this.ProjectID = ProjectID;
 }
 public String getProjectName(){

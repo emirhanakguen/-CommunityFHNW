@@ -15,7 +15,7 @@ public class SystemLog{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "LogID")
-    private int LogID;
+    private long LogID;
 
     @Column(name = "TimeStamp")
     private String TimeStamp;
@@ -23,15 +23,15 @@ public class SystemLog{
     @Column(name = "Description")
     private String Description;
 
-public SystemLog(int LogID,String TimeStamp,String Description){
+public SystemLog(long LogID,String TimeStamp,String Description){
     this.LogID = LogID;
     this.TimeStamp = TimeStamp;
     this.Description = Description;
 }
-public int getLogID(){
+public long getLogID(){
     return LogID;
 }
-public void setLogID(int LogID){
+public void setLogID(long LogID){
     this.LogID = LogID;
 }
 public String getTimeStamp(){

@@ -15,7 +15,7 @@ public class TutoringSession{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Hidden
     @Column(name = "SessionID")
-    private int SessionID;
+    private long SessionID;
 
     @Column(name = "Subject")
     private String Subject;
@@ -35,7 +35,7 @@ public class TutoringSession{
     @Column(name = "Status")
     private SessionStatus Status;
 
-public TutoringSession(int SessionID,String Subject,
+public TutoringSession(long SessionID,String Subject,
     String Description,Boolean Recurring,String StartTime,
     String EndTime,SessionStatus Status){
     this.SessionID = SessionID;
@@ -46,10 +46,10 @@ public TutoringSession(int SessionID,String Subject,
     this.EndTime = EndTime;
     this.Status = Status;
 }
-public int getSessionID(){
+public long getSessionID(){
         return SessionID;
 }
-public void setSessionID(int SessionID){
+public void setSessionID(long SessionID){
     this.SessionID = SessionID;
 }
 public String getSubject(){
